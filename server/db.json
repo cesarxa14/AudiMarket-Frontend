@@ -1,0 +1,8 @@
+{
+  "musical-producers": [
+    {"id": 1, "name": "Cesar Torres",  "age": "30", "email": "cesar@hotmail.com","rating": 5 },
+    {"id": 2, "name": "Gustavo Alfaro",  "age": "28", "email": "gustavo@hotmail.com","rating": 4 },
+    {"id": 3, "name": "Sofia Diaz",  "age": "25", "email": "sofia@hotmail.com","rating": 4 },
+    {"id": 4, "name": "Laura Contreras",  "age": "33", "email": "laura@hotmail.com","rating": 3 }
+  ]
+}
