@@ -7,7 +7,11 @@
     >
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-      <v-toolbar-title>AudiMarket</v-toolbar-title>
+      <v-toolbar-title >
+        <v-btn  to="/" color="white">
+          AudiMarket
+        </v-btn>
+      </v-toolbar-title>
 
       <v-spacer></v-spacer>
 

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="container-avatar">
 
-      <img class="img-avatar" src="https://cdn.icon-icons.com/icons2/2506/PNG/512/user_icon_150670.png" alt="">
+      <img class="img-avatar" src="../assets/user.png" alt="">
     </div>
     <div class="container-detalles">
       <div class="item1">
@@ -10,9 +10,12 @@
       </div>
       <div class="item2">
 <!--        <p>Ver proyectos</p>-->
-        <v-btn plain to="/musical-producers" color="primary">
-          Ver proyectos
-        </v-btn>
+        <router-link :to="{name:'Projects', params: {idProducer: producer.id}}">
+          <v-btn plain color="primary">
+            Ver proyectos
+          </v-btn>
+        </router-link>
+
       </div>
       <div class="item3">
         <v-btn icon color="deep-orange">

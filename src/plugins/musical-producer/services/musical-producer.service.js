@@ -11,6 +11,10 @@ class MusicalProducerService {
         return http.get(`${this.endpoint}/${id}`);
     }
 
+    getProjectsById(id) {
+        return http.get(`${this.endpoint}/${id}/projects`);
+    }
+
     create(createMusicalProducer) {
         return http.post(this.endpoint, createMusicalProducer);
     }

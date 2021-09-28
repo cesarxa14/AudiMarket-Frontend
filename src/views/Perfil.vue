@@ -1,8 +1,6 @@
 <template>
-  <div class="home">
+  <div class="perfil">
     <Header/>
-    <Home1/>
-
   </div>
 </template>
 
@@ -11,11 +9,9 @@
 
 
 import Header from "../components/header";
-import Home1 from "../components/Home1";
 export default {
-  name: 'Home',
+  name: 'Perfil',
   components: {
-    Home1,
     Header
 
   }
