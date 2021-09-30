@@ -1,17 +1,81 @@
 {
   "musical-producers": [
-    {"id": 1, "name": "Cesar", "lastname": "Torres",  "age": "30", "email": "cesar@hotmail.com","dni":"7777777", "cellphone": "987987987", "rating": 5 },
-    {"id": 2, "name": "Gustavo", "lastname": " Alfaro",  "age": "28", "email": "gustavo@hotmail.com", "dni":"8888888","cellphone": "987987987","rating": 4 },
-    {"id": 3, "name": "Sofia", "lastname": " Diaz",  "age": "25", "email": "sofia@hotmail.com", "dni":"6666666", "cellphone": "987987987","rating": 4 },
-    {"id": 4, "name": "Laura", "lastname": " Contreras",  "age": "33", "email": "laura@hotmail.com", "dni":"4444444", "cellphone": "987987987","rating": 3 }
+    {
+      "id": 1,
+      "name": "Cesar",
+      "lastname": "Torres",
+      "age": "34",
+      "email": "cesar@hotmail.com",
+      "dni": "77775555",
+      "cellphone": "987987987",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "Gustavo",
+      "lastname": " Alfaro",
+      "age": "28",
+      "email": "gustavo@hotmail.com",
+      "dni": "8888888",
+      "cellphone": "987987987",
+      "rating": 4
+    },
+    {
+      "id": 3,
+      "name": "Sofia",
+      "lastname": " Diaz",
+      "age": "25",
+      "email": "sofia@hotmail.com",
+      "dni": "6666666",
+      "cellphone": "987987987",
+      "rating": 4
+    },
+    {
+      "id": 4,
+      "name": "Laura",
+      "lastname": " Contreras",
+      "age": "33",
+      "email": "laura@hotmail.com",
+      "dni": "4444444",
+      "cellphone": "987987987",
+      "rating": 3
+    }
   ],
   "projects": [
-    {"id": 1, "name":  "project 1", "musical-producerId": 1},
-    {"id": 2, "name":  "project 2", "musical-producerId": 1},
-    {"id": 3, "name":  "project 3", "musical-producerId": 3},
-    {"id": 4, "name":  "project 4", "musical-producerId": 2},
-    {"id": 5, "name":  "project 5", "musical-producerId": 2},
-    {"id": 6, "name":  "project 6", "musical-producerId": 3},
-    {"id": 7, "name":  "project 7", "musical-producerId": 4}
+    {
+      "id": 1,
+      "name": "project 1",
+      "musical-producerId": 1
+    },
+    {
+      "id": 2,
+      "name": "project 2",
+      "musical-producerId": 1
+    },
+    {
+      "id": 3,
+      "name": "project 3",
+      "musical-producerId": 3
+    },
+    {
+      "id": 4,
+      "name": "project 4",
+      "musical-producerId": 2
+    },
+    {
+      "id": 5,
+      "name": "project 5",
+      "musical-producerId": 2
+    },
+    {
+      "id": 6,
+      "name": "project 6",
+      "musical-producerId": 3
+    },
+    {
+      "id": 7,
+      "name": "project 7",
+      "musical-producerId": 4
+    }
   ]
 }

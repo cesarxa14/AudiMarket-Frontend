@@ -2,7 +2,7 @@
   <div class="container">
     <div class="container-avatar">
 
-      <img class="img-avatar" src="../assets/user.png" alt="">
+      <img class="img-avatar" src="../../../assets/user.png" alt="">
     </div>
     <div class="container-detalles">
       <div class="item1">

@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import ProducerItem from "./producer-item";
+import ProducerItem from "../plugins/musical-producer/pages/producer-item";
 import MusicalProducerService from '../plugins/musical-producer/services/musical-producer.service';
 
 export default {

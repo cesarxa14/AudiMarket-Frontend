@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Anuncios from '../views/Anuncios'
-import Projects from '../components/projects-by-producer'
+import Projects from '../plugins/project/pages/projects-by-producer'
 Vue.use(VueRouter)
 
 const routes = [

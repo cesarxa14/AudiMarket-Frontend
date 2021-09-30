@@ -10,7 +10,7 @@
 // @ is an alias to /src
 
 
-import Header from "../components/header";
+import Header from "../plugins/general/pages/header";
 import Home1 from "../components/Home1";
 export default {
   name: 'Home',
