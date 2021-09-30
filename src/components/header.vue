@@ -5,8 +5,8 @@
         dense
         dark
     >
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
+<!--      <v-app-bar-nav-icon></v-app-bar-nav-icon>-->
+      <img style="height: 45px; width: 45px" src="../assets/logo.png">
       <v-toolbar-title >
         <v-btn  to="/" color="white">
           AudiMarket

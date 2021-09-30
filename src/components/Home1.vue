@@ -1,5 +1,7 @@
 <template>
+
   <div class="container">
+
     <div class="img-container">
       <img class="img-portada" src="../assets/portada.jpg" alt="">
     </div>
@@ -15,9 +17,10 @@
 <script>
 import ProducerItem from "./producer-item";
 import MusicalProducerService from '../plugins/musical-producer/services/musical-producer.service';
+
 export default {
   name: "Home1",
-  components: {ProducerItem},
+  components: { ProducerItem},
   data: () => ({
     producers: []
   }),

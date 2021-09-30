@@ -1,7 +1,9 @@
 <template>
-  <div class="perfil">
+  <div>
     <Header/>
+    <PerfilItem/>
   </div>
+
 </template>
 
 <script>
@@ -9,9 +11,11 @@
 
 
 import Header from "../components/header";
+import PerfilItem from "../components/perfil-item";
 export default {
   name: 'Perfil',
   components: {
+    PerfilItem,
     Header
 
   }

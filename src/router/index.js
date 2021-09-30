@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Anuncios from '../views/Anuncios'
 import Projects from '../components/projects-by-producer'
 Vue.use(VueRouter)
 
@@ -9,6 +10,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/anuncios',
+    name: 'Anuncios',
+    component: Anuncios
   },
   {
     path: '/perfil',
