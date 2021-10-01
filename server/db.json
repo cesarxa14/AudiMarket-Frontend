@@ -13,5 +13,11 @@
     {"id": 5, "name":  "project 5", "musical-producerId": 2},
     {"id": 6, "name":  "project 6", "musical-producerId": 3},
     {"id": 7, "name":  "project 7", "musical-producerId": 4}
+  ],
+  "music-genre": [
+    {"id": 1, "name": "RockandRoll", "number-songas": 10 },
+    {"id": 2, "name": "Jazz", "number-songas": 8 },
+    {"id": 3, "name": "Punk", "number-songas": 11 },
+    {"id": 4, "name": "Metal", "number-songas": 20 }
   ]
 }

@@ -2,6 +2,7 @@
   <div class="home">
     <Header/>
     <Home1/>
+    <Buscador/>
 
   </div>
 </template>
@@ -12,12 +13,12 @@
 
 import Header from "../components/header";
 import Home1 from "../components/Home1";
+
 export default {
   name: 'Home',
   components: {
     Home1,
-    Header
-
+    Header,
   }
 }
 </script>

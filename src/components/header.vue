@@ -11,6 +11,11 @@
         <v-btn  to="/" color="white">
           AudiMarket
         </v-btn>
+
+        <input type="text" v-model="buscar" class="form-control" placeholder="Buscar por Genero"/>
+
+        <input type="text" v-model="buscar" class="form-control" placeholder="Buscar por Productor"/>
+
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
