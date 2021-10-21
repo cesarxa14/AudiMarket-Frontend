@@ -1,16 +1,17 @@
 <template>
   <div>
     <Header/>
-    <Top/>
+    <ContractList/>
   </div>
+
 </template>
 
 <script>
 import Header from "../plugins/general/pages/header";
-import Top from "../plugins/musical-producer/pages/top-producers";
+import ContractList from "../plugins/contract/pages/contract-list";
 export default {
-  name: "Top-Producers",
-  components: {Top, Header}
+  name: "Contracts",
+  components: {ContractList, Header}
 }
 </script>
 

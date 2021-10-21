@@ -1,14 +1,14 @@
 {
-  "musical-producers": [
+  "musical_producers": [
     {
       "id": 1,
       "name": "Cesar",
       "lastname": "Torres",
-      "age": "34",
+      "age": "36",
       "email": "cesar@hotmail.com",
       "dni": "77775555",
       "cellphone": "987987987",
-      "rating": 5
+      "rating": 1
     },
     {
       "id": 2,
@@ -45,37 +45,107 @@
     {
       "id": 1,
       "name": "project 1",
-      "musical-producerId": 1
+      "musical_producerId": 1
     },
     {
       "id": 2,
       "name": "project 2",
-      "musical-producerId": 1
+      "musical_producerId": 1
     },
     {
       "id": 3,
       "name": "project 3",
-      "musical-producerId": 3
+      "musical_producerId": 3
     },
     {
       "id": 4,
       "name": "project 4",
-      "musical-producerId": 2
+      "musical_producerId": 2
     },
     {
       "id": 5,
       "name": "project 5",
-      "musical-producerId": 2
+      "musical_producerId": 2
     },
     {
       "id": 6,
       "name": "project 6",
-      "musical-producerId": 3
+      "musical_producerId": 3
     },
     {
       "id": 7,
       "name": "project 7",
-      "musical-producerId": 4
+      "musical_producerId": 4
+    },
+    {
+      "id": 8,
+      "name": "sasa",
+      "description": "sasa",
+      "musical_producerId": 1
+    },
+    {
+      "id": 9,
+      "name": "fdssd",
+      "description": "fdsfsd",
+      "musical_producerId": 1
+    },
+    {
+      "id": 10,
+      "name": "que tal",
+      "description": "hola",
+      "musical_producerId": 1
+    },
+    {
+      "id": 11,
+      "name": "fdfdsfds",
+      "description": "fdsfdsfds",
+      "musical_producerId": 3
+    }
+  ],
+  "contracts": [
+    {
+      "description": "qwqwqwq",
+      "createDate": "Wed Oct 20 2021 19:41:43 GMT-0500 (hora estándar de Perú)",
+      "idVProducer": 1,
+      "idMProducer": 2,
+      "id": 1
+    },
+    {
+      "description": "popoppo",
+      "createDate": "Wed Oct 20 2021 19:54:14 GMT-0500 (hora estándar de Perú)",
+      "idVProducer": null,
+      "idMProducer": 3,
+      "id": 2
+    },
+    {
+      "description": "que tal bro",
+      "createDate": "Wed Oct 20 2021 21:56:06 GMT-0500 (hora estándar de Perú)",
+      "idVProducer": null,
+      "idMProducer": 2,
+      "id": 3
+    },
+    {
+      "description": "uyuyuyy",
+      "createDate": "Wed Oct 20 2021 23:16:20 GMT-0500 (hora estándar de Perú)",
+      "idVProducer": null,
+      "idMProducer": 2,
+      "id": 4
+    }
+  ],
+  "resenas": [
+    {
+      "comment": "Buen trabajo",
+      "rating": 4,
+      "idVProducer": null,
+      "idMProducer": 1,
+      "id": 1
+    },
+    {
+      "comment": "Gran trabajo",
+      "rating": 3,
+      "idVProducer": null,
+      "idMProducer": 1,
+      "id": 2
     }
   ]
 }

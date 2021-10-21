@@ -15,15 +15,18 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn plain to="/musical-producers" color="white">
+      <v-btn plain to="/top-musical-producers" color="white">
         Top Producers
       </v-btn>
-      <v-btn plain to="/anuncios" color="white">
-        Anuncios
+      <v-btn plain to="/contracts" color="white">
+        My contracts
+      </v-btn>
+      <v-btn plain to="/posts" color="white">
+        Posts
       </v-btn>
 
-      <v-btn plain to="/perfil" color="white">
-        Perfil
+      <v-btn plain to="/profile" color="white">
+        Profile
         <v-icon>mdi-account</v-icon>
       </v-btn>
 

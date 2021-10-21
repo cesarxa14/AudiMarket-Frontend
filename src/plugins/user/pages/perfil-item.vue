@@ -1,13 +1,8 @@
 <template>
   <div data-app>
-    <h1>Perfil</h1>
+    <h1>Profile</h1>
     <v-row>
-      <v-dialog
-          v-model="dialog"
-          persistent
-          max-width="600px"
-      >
-
+      <v-dialog v-model="dialog" persistent max-width="600px">
         <v-card>
           <v-card-title>
             <span class="text-h5">Edit Profile</span>
@@ -52,37 +47,22 @@
           </v-col>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn
-                color="blue darken-1"
-                text
-                @click="closeDialog"
-            >
+            <v-btn color="blue darken-1" text @click="closeDialog">
               Close
             </v-btn>
-            <v-btn
-                color="green darken-1"
-                text
-                @click="updateProfile(infoProfile)"
-            >
-              Edit
+            <v-btn color="green darken-1" text @click="updateProfile(infoProfile)">
+              Save
             </v-btn>
 
           </v-card-actions>
         </v-card>
       </v-dialog>
 
-
     </v-row>
+
     <div class="contenedor">
       <div class="btn-fab">
-        <v-btn
-            class="mx-2"
-            fab
-            dark
-            large
-            color="cyan"
-            @click="openDialogProfile(infoProfile)"
-        >
+        <v-btn class="mx-2" fab dark large color="cyan" @click="openDialogProfile(infoProfile)">
           <v-icon dark>
             mdi-pencil
           </v-icon>
@@ -93,15 +73,15 @@
       </div>
       <div class="detalles">
         <div>
-          <h1>Nombre</h1>
+          <h1>Name</h1>
           <h2>{{infoProfile.name}}</h2>
         </div>
         <div>
-          <h1>Apellido</h1>
+          <h1>LastName</h1>
           <h2>{{infoProfile.lastname}}</h2>
         </div>
         <div>
-          <h1>Edad</h1>
+          <h1>Age</h1>
           <h2>{{infoProfile.age}}</h2>
         </div>
         <div>

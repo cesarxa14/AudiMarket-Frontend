@@ -6,7 +6,7 @@
       <img class="img-portada" src="../assets/portada.jpg" alt="">
     </div>
     <div style="text-align: left; margin-top: 20px">
-      <h1>Recomendaciones</h1>
+      <h1>Recomendations</h1>
     </div>
     <div class="producer-item" v-bind:key="producer.id" v-for="producer in producers">
       <ProducerItem v-bind:producer="producer" />

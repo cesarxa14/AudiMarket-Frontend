@@ -1,7 +1,7 @@
 import http from '@/core/http-common'
 
 class MusicalProducerService {
-    endpoint = '/musical-producers';
+    endpoint = '/musical_producers';
 
     getAll() {
         return http.get(this.endpoint);
@@ -17,6 +17,10 @@ class MusicalProducerService {
 
     getProjectsById(id) {
         return http.get(`${this.endpoint}/${id}/projects`);
+    }
+
+    sortTopProducers() {
+        return http.get(`${this.endpoint}?_sort=rating&_order=desc`)
     }
 
     create(createMusicalProducer) {

@@ -23,10 +23,10 @@
                         <v-container>
                           <v-row>
                             <v-col cols="12" sm="6" md="4" lg="12">
-                              <v-text-field v-model="editedItem.name" label="Project Name"></v-text-field>
+                              <v-text-field v-model="newItem.name" label="Project Name"></v-text-field>
                             </v-col>
                             <v-col cols="12" sm="6" md="4" lg="12">
-                              <v-text-field v-model="editedItem.musical_producerId" label="Project Owner"></v-text-field>
+                              <v-text-field v-model="newItem.description" label="Project Description"></v-text-field>
                             </v-col>
                           </v-row>
                         </v-container>
@@ -70,6 +70,7 @@
 
 <script>
 import MusicalProducerService from '../../musical-producer/services/musical-producer.service';
+import ProjectService from '../services/project.service';
 import Header from "../../general/pages/header";
 export default {
   name: "projects-by-producer",
@@ -79,12 +80,12 @@ export default {
     headers: [
       {text: 'Id',                 value: 'id',                 sortable: true,  align:'star'},
       {text: 'Name',               value: 'name',               sortable: true,  align: 'star'},
-      {text: 'M. Producer ID', value: 'musical-producerId', sortable: false},
+      {text: 'M. Producer ID', value: 'musical_producerId', sortable: false},
     ],
     dialog:false,
     dialogDelete:false,
     editedIndex:-1,
-    editedItem: {id: 0, name:'', musical_producerId:0}
+    newItem: {id: 0, name:'', description: '', musical_producerId:0}
   }),
   computed: {
     formName(){
@@ -150,6 +151,12 @@ export default {
 
     save(){
       //TODO: Create or Update Project
+      this.newItem.musical_producerId = parseInt(this.$route.params.idProducer);
+      ProjectService.createProject(this.newItem)
+      .then((response) => {
+        console.log(response.data)
+        this.projects.push(response.data)
+      })
       this.close();
     },
 

@@ -12,7 +12,7 @@
 <!--        <p>Ver proyectos</p>-->
         <router-link :to="{name:'Projects', params: {idProducer: producer.id}}">
           <v-btn plain color="primary">
-            Ver proyectos
+            View Projects
           </v-btn>
         </router-link>
 
@@ -33,9 +33,12 @@
     </div>
     <div class="container-btn">
       <div>
-        <v-btn elevation="4" >
-          Contratar
-        </v-btn>
+        <router-link :to="{name:'MusicalProducer', params: {id: producer.id}}">
+          <v-btn elevation="4" >
+            Contract
+          </v-btn>
+        </router-link>
+
       </div>
 
     </div>

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Anuncios from '../views/Anuncios'
-import Projects from '../plugins/project/pages/projects-by-producer'
+import ProjectsByProducer from '../plugins/project/pages/projects-by-producer'
 Vue.use(VueRouter)
 
 const routes = [
@@ -12,22 +12,35 @@ const routes = [
     component: Home
   },
   {
-    path: '/anuncios',
+    path: '/posts',
     name: 'Anuncios',
     component: Anuncios
   },
   {
-    path: '/perfil',
+    path: '/profile',
     name: 'Perfil',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Perfil.vue')
+
+    component: () => import('../views/Perfil.vue')
+  },
+  {
+    path: '/musical-producer/:id',
+    name: 'MusicalProducer',
+    component: () => import('../plugins/musical-producer/pages/producer-info')
+  },
+  {
+    path: '/top-musical-producers',
+    name: 'Top',
+    component: () => import('../views/Top-Producers')
+  },
+  {
+    path: '/contracts',
+    name: 'Contracts',
+    component: () => import('../views/Contracts')
   },
   {
     path: '/projects/:idProducer',
     name: 'Projects',
-    component: Projects
+    component: ProjectsByProducer
   }
 ]
 
