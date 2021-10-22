@@ -130,6 +130,41 @@
       "idVProducer": null,
       "idMProducer": 2,
       "id": 4
+    },
+    {
+      "description": "Realizo de forma correcta su trabajo",
+      "createDate": "Thu Oct 21 2021 13:39:04 GMT-0500 (hora estándar de Perú)",
+      "idVProducer": null,
+      "idMProducer": 1,
+      "id": 5
+    },
+    {
+      "description": "Necesito tus servicios",
+      "createDate": "Thu Oct 21 2021 23:17:47 GMT-0500 (hora estándar de Perú)",
+      "idVProducer": null,
+      "idMProducer": 4,
+      "id": 6
+    },
+    {
+      "description": "Necesito tus servicios",
+      "createDate": "Thu Oct 21 2021 23:18:23 GMT-0500 (hora estándar de Perú)",
+      "idVProducer": null,
+      "idMProducer": 1,
+      "id": 7
+    },
+    {
+      "description": "Hola",
+      "createDate": "Thu Oct 21 2021 23:19:59 GMT-0500 (hora estándar de Perú)",
+      "idVProducer": null,
+      "idMProducer": 2,
+      "id": 8
+    },
+    {
+      "description": "Hola gustavo como estas",
+      "createDate": "Thu Oct 21 2021 23:20:27 GMT-0500 (hora estándar de Perú)",
+      "idVProducer": null,
+      "idMProducer": 2,
+      "id": 9
     }
   ],
   "resenas": [
@@ -146,6 +181,48 @@
       "idVProducer": null,
       "idMProducer": 1,
       "id": 2
+    },
+    {
+      "comment": "Realizo de forma correcta su trabajo",
+      "rating": null,
+      "idVProducer": null,
+      "idMProducer": 1,
+      "id": 3
+    },
+    {
+      "comment": "fdfdsfsd",
+      "rating": null,
+      "idVProducer": null,
+      "idMProducer": 1,
+      "id": 4
+    },
+    {
+      "comment": "Se demoro pero cumplio",
+      "rating": null,
+      "idVProducer": null,
+      "idMProducer": 2,
+      "id": 5
+    },
+    {
+      "comment": "Tiene buena actitud al trabajar",
+      "rating": null,
+      "idVProducer": null,
+      "idMProducer": 2,
+      "id": 6
+    },
+    {
+      "comment": "Cesar trabaja bien",
+      "rating": null,
+      "idVProducer": null,
+      "idMProducer": 1,
+      "id": 7
+    },
+    {
+      "comment": "No realizo el trabajo",
+      "rating": null,
+      "idVProducer": null,
+      "idMProducer": 2,
+      "id": 8
     }
   ]
 }

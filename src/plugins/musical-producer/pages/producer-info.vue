@@ -158,6 +158,7 @@ export default {
       ReseñaService.createReseña(this.newReseña)
       .then((response) => {
         console.log('createdreseña', response)
+        this.reseñalist.push(response.data)
         this.closeDialogReseña()
       })
     }
