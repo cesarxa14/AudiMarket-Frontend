@@ -3,7 +3,7 @@
     <Header/>
 
     <div class="data-table">
-      <h1>PROJECTS By Musical Producer {{ this.$route.params.idProducer}}</h1>
+      <h1>PROJECTS By Play List {{ this.$route.params.idPlayList}}</h1>
       <v-row align="center" class="px-3 mx-auto">
         <v-col cols="12" sm="12">
           <v-card class="mx-auto" tile>
@@ -69,9 +69,11 @@
 </template>
 
 <script>
-import MusicalProducerService from '../../musical-producer/services/musical-producer.service';
+//import MusicalProducerService from '../../musical-producer/services/musical-producer.service';
 import ProjectService from '../services/project.service';
 import Header from "../../general/pages/header";
+import PlayListService from '../../playlist/services/playlist.service'
+
 export default {
   name: "projects-by-producer",
   data: () =>({
@@ -80,12 +82,12 @@ export default {
     headers: [
       {text: 'Id',                 value: 'id',                 sortable: true,  align:'star'},
       {text: 'Name',               value: 'name',               sortable: true,  align: 'star'},
-      {text: 'M. Producer ID', value: 'musical_producerId', sortable: false},
+      {text: 'P.List ID',          value: 'playlistId', sortable: false},
     ],
     dialog:false,
     dialogDelete:false,
     editedIndex:-1,
-    newItem: {id: 0, name:'', description: '', musical_producerId:0}
+    newItem: {id: 0, name:'', description: '', playlistId:0}
   }),
   computed: {
     formName(){
@@ -114,13 +116,13 @@ export default {
       return{
         id: project.id,
         name: project.name,
-        musical_producerId: project.musical_producerId,
+        playlistId: project.playlistId,
 
       }
     },
 
     retrieveProjects(){
-      MusicalProducerService.getAll()
+      PlayListService.getAll()
           .then((response) => {
             this.projects=response.data.map(this.getDisplayProject);
           })
@@ -151,7 +153,7 @@ export default {
 
     save(){
       //TODO: Create or Update Project
-      this.newItem.musical_producerId = parseInt(this.$route.params.idProducer);
+      this.newItem.musical_producerId = parseInt(this.$route.params.idPlayList);
       ProjectService.createProject(this.newItem)
       .then((response) => {
         console.log(response.data)
@@ -161,7 +163,7 @@ export default {
     },
 
     deleteProject(id){
-      MusicalProducerService.delete(id)
+      PlayListService.delete(id)
           .then(() => {
             this.refreshList();
           })
@@ -170,7 +172,7 @@ export default {
           });
     },
     getProjectsById() {
-      MusicalProducerService.getProjectsById(this.$route.params.idProducer)
+      PlayListService.getProjectsById(this.$route.params.idPlayList)
       .then((response) =>{
         console.log(response.data)
         this.projects = response.data
@@ -179,7 +181,7 @@ export default {
   },
   mounted() {
     console.log(this.$route.params)
-    this.getProjectsById(this.$route.params.idProducer)
+    this.getProjectsById(this.$route.params.idPlayList)
 
   }
 }

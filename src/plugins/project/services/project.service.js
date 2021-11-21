@@ -1,6 +1,6 @@
 import http from '@/core/http-common'
 
-class MusicalProducerService {
+class PlayListsService {
     endpoint = '/projects';
 
     getAll() {
@@ -22,8 +22,6 @@ class MusicalProducerService {
     getProjectsById(id) {
         return http.get(`${this.endpoint}/${id}/projects`);
     }
-
-
 }
 
-export default new MusicalProducerService()
+export default new PlayListsService()

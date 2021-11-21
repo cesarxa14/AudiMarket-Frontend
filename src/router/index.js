@@ -3,6 +3,9 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Anuncios from '../views/Anuncios'
 import ProjectsByProducer from '../plugins/project/pages/projects-by-producer'
+
+
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -38,10 +41,16 @@ const routes = [
     component: () => import('../views/Contracts')
   },
   {
-    path: '/projects/:idProducer',
+    path: '/projects/:idPlayList',
     name: 'Projects',
     component: ProjectsByProducer
+  },
+  {
+    path: '/playlists/:idProducer',
+    name: 'PlayList',
+    component: () => import('../plugins/playlist/pages/playlist-home')
   }
+
 ]
 
 const router = new VueRouter({
