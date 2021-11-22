@@ -15,20 +15,28 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn plain to="/top-musical-producers" color="white">
-        Top Producers
-      </v-btn>
-      <v-btn plain to="/contracts" color="white">
-        My contracts
-      </v-btn>
-      <v-btn plain to="/posts" color="white">
-        Posts
-      </v-btn>
+      <div v-if="token">
+        <v-btn plain to="/top-musical-producers" color="white">
+          Top Producers
+        </v-btn>
+        <v-btn plain to="/contracts" color="white">
+          My contracts
+        </v-btn>
+        <v-btn plain to="/posts" color="white">
+          Posts
+        </v-btn>
 
-      <v-btn plain to="/profile" color="white">
-        Profile
-        <v-icon>mdi-account</v-icon>
-      </v-btn>
+        <v-btn plain to="/profile" color="white">
+          Profile
+          <v-icon>mdi-account</v-icon>
+        </v-btn>
+        <v-btn plain  color="white" @click="logout()">
+          Logout
+
+        </v-btn>
+
+      </div>
+
 
 <!--      <v-menu left bottom>-->
 <!--        <template v-slot:activator="{ on, attrs }">-->
@@ -50,7 +58,18 @@
 
 <script>
 export default {
-  name: "header"
+  name: "header",
+  data(){
+    return{
+      token: localStorage.getItem('token')
+    }
+  },
+  methods: {
+    logout(){
+      localStorage.removeItem('token');
+      this.$router.push('/login')
+    }
+  }
 }
 </script>
 
