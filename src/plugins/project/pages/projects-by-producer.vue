@@ -15,7 +15,7 @@
                   <v-spacer></v-spacer>
                   <v-dialog v-model="dialog" max-width="500px">
                     <template v-slot:activator="{on, attrs}">
-                      <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">New Project</v-btn>
+                      <v-btn v-if="typeUser == 'music' && idUser ==  idMProducer" color="primary" dark class="mb-2" v-bind="attrs" v-on="on">New Project</v-btn>
                     </template>
                     <v-card>
                       <v-card-title>{{formName}}</v-card-title>
@@ -78,6 +78,8 @@ import PlayListService from '../../playlist/services/playlist.service'
 export default {
   name: "projects-by-producer",
   data: () =>({
+    idPlaylist: null,
+    idMProducer: null,
     projects: [],
     name: '',
     headers: [
@@ -88,7 +90,9 @@ export default {
     dialog:false,
     dialogDelete:false,
     editedIndex:-1,
-    newItem: {id: 0, name:'', description: '',addedDate: new Date(),playlistId:null}
+    newItem: {id: 0, name:'', description: '',addedDate: new Date(),playlistId:null},
+    idUser: localStorage.getItem('idUser'),
+    typeUser: localStorage.getItem('typeUser')
   }),
   computed: {
     formName(){
@@ -126,6 +130,7 @@ export default {
       .then((response)=>{
         console.log(response)
         this.projects = response.data
+        this.idPlaylist = response.data[0].playList.musicProducer.id;
       })
     },
 
@@ -190,7 +195,8 @@ export default {
   mounted() {
     console.log(this.$route.params)
     // this.getProjectsById(this.$route.params.idPlayList)
-    this.getProjectsByPlayListId()
+    this.getProjectsByPlayListId();
+    this.idPlaylist = this.$route.params.idPlayList;
 
   }
 }

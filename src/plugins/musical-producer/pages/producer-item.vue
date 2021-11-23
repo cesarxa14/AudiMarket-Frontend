@@ -31,7 +31,7 @@
         <v-rating readonly color="primary"  length="5" size="20" :value="producer.rating" ></v-rating>
       </div>
     </div>
-    <div class="container-btn">
+    <div class="container-btn" v-if="typeUser == 'video'">
       <div>
         <router-link :to="{name:'MusicalProducer', params: {id: producer.id}}">
           <v-btn elevation="4" >
@@ -51,7 +51,13 @@ export default {
   name: "producer-item",
   props: [
       "producer"
-  ]
+  ],
+  data(){
+    return {
+      idUser: localStorage.getItem('idUser'),
+      typeUser: localStorage.getItem('typeUser')
+    }
+  }
 }
 </script>
 

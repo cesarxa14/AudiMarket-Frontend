@@ -58,7 +58,7 @@ const routes = [
   {
     path: '/playlists/:idProducer',
     name: 'PlayList',
-    component: () => import('../plugins/playlist/pages/playlist-home')
+    component: () => import('../views/Playlist')
   }
 
 ]

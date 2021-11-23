@@ -15,14 +15,14 @@
 
       <v-spacer></v-spacer>
 
-      <div v-if="token">
+      <div v-if="idUser">
 <!--        <v-btn plain to="/top-musical-producers" color="white">-->
 <!--          Top Producers-->
 <!--        </v-btn>-->
         <v-btn plain to="/contracts" color="white">
           My contracts
         </v-btn>
-        <v-btn plain to="/publications" color="white">
+        <v-btn v-if="typeUser == 'music'" plain to="/publications" color="white">
           Publications
         </v-btn>
 
@@ -61,12 +61,14 @@ export default {
   name: "header",
   data(){
     return{
-      token: localStorage.getItem('token')
+      idUser: localStorage.getItem('idUser'),
+      typeUser: localStorage.getItem('typeUser')
     }
   },
   methods: {
     logout(){
-      localStorage.removeItem('token');
+      localStorage.removeItem('idUser');
+      localStorage.removeItem('typeUser');
       this.$router.push('/login')
     }
   }

@@ -1,12 +1,26 @@
 import http from '@/core/http-common'
 
-class MusicalProducerService {
-    endpoint = '/musicproducers/auth';
+class AuthService {
+    endpointMproducer = '/musicproducers/auth';
+    endpointVproducer = '/videoproducers/auth';
 
+    // ========== MUSIC PRODUCER =============
     loginMusicProducer(user) {
-        return http.post(`${this.endpoint}/sign-in`, user);
+        return http.post(`${this.endpointMproducer}/sign-in`, user);
+    }
+
+    registerMusicProducer(user) {
+        return http.post(`${this.endpointMproducer}/sign-up`, user)
+    }
+// ========== VIDEO PRODUCER =============
+    loginVideoProducer(user) {
+        return http.post(`${this.endpointVproducer}/sign-in`, user);
+    }
+
+    registerVideoProducer(user) {
+        return http.post(`${this.endpointVproducer}/sign-up`, user)
     }
 
 }
 
-export default new MusicalProducerService()
+export default new AuthService()

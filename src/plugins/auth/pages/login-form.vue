@@ -55,9 +55,25 @@ export default {
   methods: {
     login(){
       console.log(this.userr);
-      AuthService.loginMusicProducer(this.userr)
-      localStorage.setItem('token', this.userr.user);
-      // this.$router.push('/')
+      if(this.typeUser == 'music'){
+        AuthService.loginMusicProducer(this.user)
+            .then((response)=>{
+              console.log(response)
+              // localStorage.setItem('idUser', response.data.id);
+
+            })
+      }else if (this.typeUser == 'video'){
+        AuthService.loginVideoProducer(this.user)
+            .then((response)=>{
+              console.log(response)
+              // localStorage.setItem('idUser', response.data.id);
+            })
+      }
+      localStorage.setItem('idUser', 1);
+      localStorage.setItem('typeUser', this.typeUser);
+      this.$router.push('/')
+
+
 
     },
     chooseUser(type){

@@ -90,6 +90,7 @@
 
 <script>
 import MusicalProducersService from '../../musical-producer/services/musical-producer.service'
+import VideoProducerService from '../../video-producer/services/video-producer.service';
 
 export default {
   name: "perfil-item",
@@ -99,16 +100,31 @@ export default {
       infoProfile: [],
       editReserve: false,
       dialog: false,
-      applianceReserveItem: {}
+      applianceReserveItem: {},
+      idUser: localStorage.getItem('idUser'),
+      userType: localStorage.getItem('typUser')
+
     }
   },
   methods: {
     getUserInfo() {
-      MusicalProducersService.getById(1)
-      .then((response) => {
-        console.log(response.data)
-        this.infoProfile = response.data
-      })
+      console.log(this.idUser)
+      console.log(this.userType)
+      if(this.userType == 'music'){
+        MusicalProducersService.getById(this.idUser)
+            .then((response) => {
+              console.log(response.data)
+              this.infoProfile = response.data
+            })
+      } else if (this.userType == 'video'){
+        VideoProducerService.getById(this.idUser)
+            .then((response) => {
+              console.log(response.data)
+              this.infoProfile = response.data
+            })
+
+      }
+
 
     },
     getUser(user) {

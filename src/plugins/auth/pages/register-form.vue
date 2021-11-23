@@ -38,7 +38,7 @@
               label="Username"
               required
               outlined
-              v-model="videoProducer.username"
+              v-model="videoProducer.user"
           ></v-text-field>
           <v-text-field
               label="Password"
@@ -73,7 +73,7 @@
               label="Username"
               required
               outlined
-              v-model="musicProducer.username"
+              v-model="musicProducer.user"
           ></v-text-field>
           <v-text-field
               label="Password"
@@ -96,6 +96,8 @@
 </template>
 
 <script>
+import MusicalProducerService from '../../musical-producer/services/musical-producer.service';
+import VideoProducerService from '../../video-producer/services/video-producer.service';
 export default {
   name: "register-form",
   data(){
@@ -104,16 +106,14 @@ export default {
         firstname: null,
         lastname: null,
         dni: null,
-        entryDate: new Date(),
-        username: null,
+        user: null,
         password: null
       },
       videoProducer: {
         firstname: null,
         lastname: null,
         dni: null,
-        entryDate: new Date(),
-        username: null,
+        user: null,
         password: null
       },
       typeUser: null,
@@ -122,13 +122,31 @@ export default {
   },
   methods: {
     register(){
-      console.log(this.videoProducer);
+      // console.log(this.videoProducer);
       if (this.typeUser == 'video'){
+        VideoProducerService.create(this.videoProducer)
+        .then((response) => {
+          if(response.status == 200){
+            localStorage.setItem('idUser', response.data.id);
+            localStorage.setItem('typeUser', this.typeUser);
+            this.$router.push('/')
+          }
+        })
         localStorage.setItem('token', this.videoProducer.username);
-      }else{
-        localStorage.setItem('token', this.musicProducer.username);
+      }else if (this.typeUser == 'music'){
+        console.log(this.musicProducer)
+        MusicalProducerService.create(this.musicProducer)
+        .then((response) =>{
+          console.log(response)
+          if(response.status == 200){
+            localStorage.setItem('idUser', response.data.id);
+            localStorage.setItem('typeUser', this.typeUser);
+            this.$router.push('/')
+          }
+        })
+
       }
-      this.$router.push('/')
+
     },
     chooseUser(type){
       this.chooseContent = false;
