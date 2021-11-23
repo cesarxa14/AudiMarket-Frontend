@@ -16,14 +16,14 @@
       <v-spacer></v-spacer>
 
       <div v-if="token">
-        <v-btn plain to="/top-musical-producers" color="white">
-          Top Producers
-        </v-btn>
+<!--        <v-btn plain to="/top-musical-producers" color="white">-->
+<!--          Top Producers-->
+<!--        </v-btn>-->
         <v-btn plain to="/contracts" color="white">
           My contracts
         </v-btn>
-        <v-btn plain to="/posts" color="white">
-          Posts
+        <v-btn plain to="/publications" color="white">
+          Publications
         </v-btn>
 
         <v-btn plain to="/profile" color="white">

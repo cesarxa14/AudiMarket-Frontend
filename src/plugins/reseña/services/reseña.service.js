@@ -1,7 +1,7 @@
 import http from '@/core/http-common'
 
 class ReseñaService {
-    endpoint = '/resenas';
+    endpoint = '/reviews';
 
     getAll() {
         return http.get(this.endpoint);

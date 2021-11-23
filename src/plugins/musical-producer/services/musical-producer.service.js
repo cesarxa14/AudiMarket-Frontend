@@ -1,7 +1,7 @@
 import http from '@/core/http-common'
 
 class MusicalProducerService {
-    endpoint = '/musical_producers';
+    endpoint = '/musicproducers';
 
     getAll() {
         return http.get(this.endpoint);
@@ -29,6 +29,18 @@ class MusicalProducerService {
 
     getPlayListsById(id) {
         return http.get(`${this.endpoint}/${id}/playlists`);
+    }
+
+    getReviewsById(id) {
+        return http.get(`${this.endpoint}/${id}/reviews`);
+    }
+
+    getContractsById(id) {
+        return http.get(`${this.endpoint}/${id}/contracts`);
+    }
+
+    getPublicationsById(id) {
+        return http.get(`${this.endpoint}/${id}/publications`);
     }
 
     update(id, data) {

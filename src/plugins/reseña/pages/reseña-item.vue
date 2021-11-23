@@ -5,17 +5,17 @@
     </div>
     <div class="content">
       <div>
-        <h3>Carlos Lara </h3>
+        <h3>{{reseña.videoProducer.firstname}} {{reseña.videoProducer.lastname}} </h3>
       </div>
       <div class="comment">
-        <h5>{{reseña.comment}}</h5>
+        <h5>{{reseña.description}}</h5>
       </div>
       <div>
 
       </div>
     </div>
     <div class="rating">
-      <v-rating readonly color="primary"  length="5" size="20" :value="reseña.rating" ></v-rating>
+      <v-rating readonly color="primary"  length="5" size="20" :value="reseña.qualification" ></v-rating>
     </div>
   </div>
 </template>

@@ -5,10 +5,10 @@
       <v-dialog v-model="dialogContract" persistent max-width="600px">
         <v-card>
           <v-card-title>
-            <span class="text-h5">Contrat {{infoProducer.name}} {{infoProducer.lastname}}</span>
+            <span class="text-h5">Contrat {{infoProducer.firstname}} {{infoProducer.lastname}}</span>
           </v-card-title>
           <v-col cols="12">
-            <v-text-field label="Description Contract" required outlined v-model="infoContract.description">
+            <v-text-field label="Description Contract" required outlined v-model="infoContract.content">
 
             </v-text-field>
           </v-col>
@@ -32,13 +32,12 @@
         <img class="img" src="../../../assets/user.png" alt="">
       </div>
       <div class="detalles">
-        <h2>Name: {{infoProducer.name}}</h2>
+        <h2>Name: {{infoProducer.firstname}}</h2>
         <h2>Lastname: {{infoProducer.lastname}}</h2>
-        <h2>Age: {{infoProducer.age}}</h2>
-        <h2>Email: {{infoProducer.email}}</h2>
-        <h2>Cellphone: {{infoProducer.cellphone}}</h2>
+<!--        <h2>Email: {{infoProducer.email}}</h2>-->
+        <h2>Username: {{infoProducer.user}}</h2>
         <h2>DNI: {{infoProducer.dni}}</h2>
-        <v-rating readonly color="primary"  length="5" size="20" :value="infoProducer.rating" ></v-rating>
+        <v-rating readonly color="primary"  length="5" size="20" :value="infoProducer.qualification" ></v-rating>
       </div>
 
     </div>
@@ -66,10 +65,10 @@
             <span class="text-h5">New Reseña</span>
           </v-card-title>
           <v-col cols="12">
-            <v-text-field label="Comment" required outlined v-model="newReseña.comment">
+            <v-text-field label="Comment" required outlined v-model="newReseña.description">
 
             </v-text-field>
-            <v-rating color="primary"  length="5" size="20" :value="newReseña.rating" ></v-rating>
+            <v-rating color="primary"  length="5" size="20" :value="newReseña.qualification" ></v-rating>
           </v-col>
           <v-card-actions>
             <v-spacer></v-spacer>
@@ -101,16 +100,16 @@ export default {
   data: () => ({
     infoProducer: {},
     infoContract: {
-      description: '',
-      createDate: Date(),
-      idVProducer: null, // por mientras lo pongo por defecto null
-      idMProducer: null
+      content: '',
+      musicProducerId: null, // por mientras lo pongo por defecto null
+      videoProducerId: null
     },
     newReseña: {
-      comment: '',
-      rating: null,
-      idVProducer: null,
-      idMProducer: null
+      description: '',
+      qualification: null,
+      videoProducerId: null,
+      musicProducerId: null,
+      publicationDate: new Date()
     },
     reseñalist: [],
     dialogContract: false,
@@ -126,7 +125,7 @@ export default {
       })
     },
     getReseñasByIDMProducer(){
-      ReseñaService.getByIDMProducer(this.$route.params.id)
+      MusicalProducerService.getReviewsById(this.$route.params.id)
       .then((response) => {
         console.log('reseñas', response.data)
         this.reseñalist = response.data;
@@ -139,7 +138,9 @@ export default {
       this.dialogNewReseña = false;
     },
     contractProducer() {
-      this.infoContract.idMProducer = parseInt(this.$route.params.id);
+      this.infoContract.musicProducerId = parseInt(this.$route.params.id);
+      this.infoContract.videoProducerId  = 1;//por mientras
+      console.log(this.infoContract)
     ContractService.createContract(this.infoContract)
       .then((response) => {
         console.log(response.data)
@@ -154,7 +155,10 @@ export default {
       this.dialogNewReseña = true
     },
     addReseña(){
-      this.newReseña.idMProducer = this.infoProducer.id
+      this.newReseña.musicProducerId = this.infoProducer.id
+      this.newReseña.videoProducerId = 1//por mientras
+      this.newReseña.qualification = 4
+      console.log(this.newReseña)
       ReseñaService.createReseña(this.newReseña)
       .then((response) => {
         console.log('createdreseña', response)
@@ -165,6 +169,7 @@ export default {
 
   },
   mounted() {
+    console.log(this.$route.params.id)
     this.getInfoMusicalProducer();
     this.getReseñasByIDMProducer();
   }

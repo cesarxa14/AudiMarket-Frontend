@@ -19,20 +19,20 @@
               label="Username"
               required
               outlined
-              v-model="user.username"
+              v-model="userr.user"
           ></v-text-field>
           <v-text-field
               label="Password"
               required
               outlined
               type="password"
-              v-model="user.password"
+              v-model="userr.password"
           ></v-text-field>
         </v-col>
       </div>
       <div class="login-footer">
         <a href="/register">¿No tienes cuenta? Registrate</a>
-        <v-btn color="green darken-1" text @click="login(user)">
+        <v-btn color="green darken-1" text @click="login(userr)">
           Login
         </v-btn>
       </div>
@@ -42,26 +42,29 @@
 </template>
 
 <script>
+import AuthService from '../services/auth.service';
 export default {
   name: "login-form",
   data(){
     return {
-      user: {username: null, password: null},
+      userr: {user: null, password: null},
       chooseContent: true,
       typeUser: null,
     }
   },
   methods: {
-    login(user){
-      console.log(user);
-      localStorage.setItem('token', this.user.username);
-      this.$router.push('/')
+    login(){
+      console.log(this.userr);
+      AuthService.loginMusicProducer(this.userr)
+      localStorage.setItem('token', this.userr.user);
+      // this.$router.push('/')
 
     },
     chooseUser(type){
       this.chooseContent = false;
       this.typeUser = type;
-    }
+    },
+
   }
 }
 </script>

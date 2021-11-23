@@ -30,7 +30,8 @@
 </template>
 
 <script>
-import ContractService from "../services/contract.service";
+// import ContractService from "../services/contract.service";
+import MusicalProducerService from "../../musical-producer/services/musical-producer.service";
 export default {
   name: "contract-list",
   data: () =>({
@@ -38,8 +39,8 @@ export default {
     name: '',
     headers: [
       {text: 'Id',                 value: 'id',                 sortable: false,  align:'star'},
-      {text: 'Name',               value: 'description',               sortable: false,  align: 'star'},
-      {text: 'Create Date',        value: 'createDate',               sortable: false,  align: 'star'},
+      {text: 'Content',               value: 'content',          sortable: false,  align: 'star'}
+      // {text: 'Create Date',        value: 'createDate',               sortable: false,  align: 'star'},
       // {text: 'M. Producer ID', value: 'musical_producerId', sortable: false},
     ],
     dialog:false,
@@ -49,10 +50,9 @@ export default {
   }),
   methods: {
     getContractsByMProducer(){
-      ContractService.getContractsByMProducer(2)
-      .then((response) => {
-        console.log('fdsfsddf')
-        console.log(response.data)
+      MusicalProducerService.getContractsById(1)
+      .then((response)=>{
+        console.log(response)
         this.contracts = response.data
       })
     }

@@ -6,7 +6,7 @@
     </div>
     <div class="container-detalles">
       <div class="item1">
-        <p>{{ producer.name }}</p>
+        <p>{{ producer.firstname }} {{producer.lastname}}</p>
       </div>
       <div class="item2">
         <!--        <p>Ver proyectos</p>-->

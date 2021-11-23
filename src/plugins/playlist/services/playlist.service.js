@@ -7,6 +7,10 @@ class MusicalProducerService {
         return http.get(this.endpoint);
     }
 
+    getProjectsByPlayListId(id){
+        return http.get(`${this.endpoint}/${id}/projects`)
+    }
+
     getById(id) {
         return http.get(`${this.endpoint}/${id}`);
     }
@@ -27,9 +31,9 @@ class MusicalProducerService {
         return http.post(this.endpoint, createPlayList);
     }
 
-    getProjectsById(id) {
-        return http.get(`${this.endpoint}/${id}/projects`);
-    }
+    // getProjectsById(id) {
+    //     return http.get(`${this.endpoint}/${id}/projects`);
+    // }
 
     update(id, data) {
         return http.put(`${this.endpoint}/${ id }`, data);

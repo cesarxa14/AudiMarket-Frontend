@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
-import Anuncios from '../views/Anuncios';
 import ProjectsByProducer from '../plugins/project/pages/projects-by-producer';
 import Login from "../views/Login";
 import Register from "../views/Register";
+import Publications from "../views/Publications";
 
 Vue.use(VueRouter)
 
@@ -15,6 +15,11 @@ const routes = [
     component: Home
   },
   {
+    path: '/publications',
+    name: 'Publications',
+    component: Publications
+  },
+  {
     path: '/login',
     name: 'Login',
     component: Login
@@ -23,11 +28,6 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: Register
-  },
-  {
-    path: '/posts',
-    name: 'Anuncios',
-    component: Anuncios
   },
   {
     path: '/profile',

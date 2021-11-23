@@ -15,7 +15,7 @@
                   <v-spacer></v-spacer>
                   <v-dialog v-model="dialog" max-width="500px">
                     <template v-slot:activator="{on, attrs}">
-                      <v-btn color="primary" dark class="mb-2" v-bond="attrs" v-on="on">New Project</v-btn>
+                      <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">New Project</v-btn>
                     </template>
                     <v-card>
                       <v-card-title>{{formName}}</v-card-title>
@@ -70,6 +70,7 @@
 
 <script>
 //import MusicalProducerService from '../../musical-producer/services/musical-producer.service';
+
 import ProjectService from '../services/project.service';
 import Header from "../../general/pages/header";
 import PlayListService from '../../playlist/services/playlist.service'
@@ -82,12 +83,12 @@ export default {
     headers: [
       {text: 'Id',                 value: 'id',                 sortable: true,  align:'star'},
       {text: 'Name',               value: 'name',               sortable: true,  align: 'star'},
-      {text: 'P.List ID',          value: 'playlistId', sortable: false},
+      {text: 'Description',        value: 'description', sortable: false},
     ],
     dialog:false,
     dialogDelete:false,
     editedIndex:-1,
-    newItem: {id: 0, name:'', description: '', playlistId:0}
+    newItem: {id: 0, name:'', description: '',addedDate: new Date(),playlistId:null}
   }),
   computed: {
     formName(){
@@ -119,6 +120,13 @@ export default {
         playlistId: project.playlistId,
 
       }
+    },
+    getProjectsByPlayListId(){
+      PlayListService.getProjectsByPlayListId(this.$route.params.idPlayList)
+      .then((response)=>{
+        console.log(response)
+        this.projects = response.data
+      })
     },
 
     retrieveProjects(){
@@ -171,17 +179,18 @@ export default {
             console.log(e);
           });
     },
-    getProjectsById() {
-      PlayListService.getProjectsById(this.$route.params.idPlayList)
-      .then((response) =>{
-        console.log(response.data)
-        this.projects = response.data
-      })
-    }
+    // getProjectsById() {
+    //   PlayListService.getProjectsById(this.$route.params.idPlayList)
+    //   .then((response) =>{
+    //     console.log(response.data)
+    //     this.projects = response.data
+    //   })
+    // }
   },
   mounted() {
     console.log(this.$route.params)
-    this.getProjectsById(this.$route.params.idPlayList)
+    // this.getProjectsById(this.$route.params.idPlayList)
+    this.getProjectsByPlayListId()
 
   }
 }

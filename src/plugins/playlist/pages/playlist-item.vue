@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+
     <div class="container-disc">
 
       <img class="img-disc" src="../../../assets/disc.png" alt="">
@@ -7,7 +8,7 @@
 
       <div class="container-detalles">
       <div class="item1">
-        <p>{{ playlist.description }}</p>
+        <h1>{{ playlist.description }}</h1>
         <p>{{ playlist.id }}</p>
       </div>
 
@@ -32,15 +33,13 @@
         </v-btn>
 
       </div >
-      <div class="item4">
-        <v-rating readonly color="primary"  length="5" size="20" :value="playlist.rating" ></v-rating>
-      </div>
 
     </div>
 
 </template>
 
 <script>
+
 export default {
   name: "playlist-item",
   props: [
@@ -51,18 +50,19 @@ export default {
 
 <style scoped>
 .container{
+  height: auto;
   display: grid;
   grid-template-columns: 20% 60% 20%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 .img-disc{
-  width: 90%;
-  height: 90%;
+  width: 120px;
+  height: 120px;
 }
 .container-detalles{
   /*border: 2px solid green;*/
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   text-align: left;
 }
 .item1{

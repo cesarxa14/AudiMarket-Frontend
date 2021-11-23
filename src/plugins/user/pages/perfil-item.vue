@@ -12,7 +12,7 @@
                 label="Name*"
                 required
                 outlined
-                v-model="infoProfile.name"
+                v-model="infoProfile.firstname"
             ></v-text-field>
             <v-text-field
                 label="Last Name*"
@@ -20,18 +20,8 @@
                 outlined
                 v-model="infoProfile.lastname"
             ></v-text-field>
-            <v-text-field
-                label="Email*"
-                required
-                outlined
-                v-model="infoProfile.email"
-            ></v-text-field>
-            <v-text-field
-                label="Age*"
-                required
-                outlined
-                v-model="infoProfile.age"
-            ></v-text-field>
+
+
             <v-text-field
                 label="DNI*"
                 required
@@ -39,10 +29,10 @@
                 v-model="infoProfile.dni"
             ></v-text-field>
             <v-text-field
-                label="Cellphone*"
+                label="Username*"
                 required
                 outlined
-                v-model="infoProfile.cellphone"
+                v-model="infoProfile.user"
             ></v-text-field>
           </v-col>
           <v-card-actions>
@@ -73,28 +63,24 @@
       </div>
       <div class="detalles">
         <div>
+          <h1>ID</h1>
+          <h2>{{infoProfile.id}}</h2>
+        </div>
+        <div>
           <h1>Name</h1>
-          <h2>{{infoProfile.name}}</h2>
+          <h2>{{infoProfile.firstname}}</h2>
         </div>
         <div>
           <h1>LastName</h1>
           <h2>{{infoProfile.lastname}}</h2>
         </div>
         <div>
-          <h1>Age</h1>
-          <h2>{{infoProfile.age}}</h2>
-        </div>
-        <div>
-          <h1>Email</h1>
-          <h2>{{infoProfile.email}}</h2>
-        </div>
-        <div>
           <h1>DNI</h1>
           <h2>{{infoProfile.dni}}</h2>
         </div>
         <div>
-          <h1>Cellphone</h1>
-          <h2>{{infoProfile.cellphone}}</h2>
+          <h1>Username</h1>
+          <h2>{{infoProfile.user}}</h2>
         </div>
       </div>
     </div>
