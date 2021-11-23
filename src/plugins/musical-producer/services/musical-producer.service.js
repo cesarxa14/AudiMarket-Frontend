@@ -27,6 +27,9 @@ class MusicalProducerService {
         return http.post(this.endpoint, createMusicalProducer);
     }
 
+    getPlayListsById(id) {
+        return http.get(`${this.endpoint}/${id}/playlists`);
+    }
 
     update(id, data) {
         return http.put(`${this.endpoint}/${ id }`, data);

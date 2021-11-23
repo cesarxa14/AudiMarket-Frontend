@@ -12,7 +12,10 @@
 
 <script>
 import PlayListItem from "./playlist-item";
-import MusicalProducerService from '../services/playlist.service'
+//import PlayListService from '../services/playlist.service'
+import MusicalProducerService from '../../musical-producer/services/musical-producer.service'
+
+
 //import PlayListService from "../services/playlist.service";
 
 export default {
@@ -23,7 +26,7 @@ export default {
   }),
   methods: {
     getPlayListById() {
-      MusicalProducerService.getPlayListById(this.$route.params.idProducer)
+      MusicalProducerService.getPlayListsById(this.$route.params.idProducer)
           .then((response) =>{
             console.log(response.data)
             this.playlists = response.data

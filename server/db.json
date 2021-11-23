@@ -45,22 +45,42 @@
     {
       "id": 1,
       "description": "PlayList Three",
-      "musical_producerId":3
+      "musical_producerId": 3
     },
     {
       "id": 2,
       "description": "PlayList Two",
-      "musical_producerId":4
+      "musical_producerId": 4
     },
     {
       "id": 3,
       "description": "PlayList One",
-      "musical_producerId":1
+      "musical_producerId": 1
     },
     {
       "id": 4,
       "description": "PlayList Four",
-      "musical_producerId":2
+      "musical_producerId": 2
+    },
+    {
+      "id": 5,
+      "description": "PlayList Five",
+      "musical_producerId": 1
+    },
+    {
+      "id": 6,
+      "description": "PlayList Six",
+      "musical_producerId": 2
+    },
+    {
+      "id": 7,
+      "description": "PlayList Seven",
+      "musical_producerId": 3
+    },
+    {
+      "id": 8,
+      "description": "PlayList Eight",
+      "musical_producerId": 4
     }
   ],
   "projects": [
@@ -101,33 +121,9 @@
     },
     {
       "id": 8,
-      "name": "sasa",
-      "description": "sasa",
-      "musical_producerId": 1
-    },
-    {
-      "id": 9,
-      "name": "fdssd",
-      "description": "fdsfsd",
-      "musical_producerId": 1
-    },
-    {
-      "id": 10,
-      "name": "que tal",
-      "description": "hola",
-      "musical_producerId": 1
-    },
-    {
-      "id": 11,
-      "name": "fdfdsfds",
-      "description": "fdsfdsfds",
-      "musical_producerId": 3
-    },
-    {
-      "id": 12,
-      "name": "",
-      "description": "",
-      "musical_producerId": 1
+      "name": "Project 8",
+      "description": "Ninguno",
+      "playlistId": 6
     }
   ],
   "contracts": [

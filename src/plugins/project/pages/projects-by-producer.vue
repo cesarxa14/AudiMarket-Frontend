@@ -153,7 +153,7 @@ export default {
 
     save(){
       //TODO: Create or Update Project
-      this.newItem.musical_producerId = parseInt(this.$route.params.idPlayList);
+      this.newItem.playlistId = parseInt(this.$route.params.idPlayList);
       ProjectService.createProject(this.newItem)
       .then((response) => {
         console.log(response.data)
