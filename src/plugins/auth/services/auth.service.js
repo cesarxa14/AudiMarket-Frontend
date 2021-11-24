@@ -6,7 +6,7 @@ class AuthService {
 
     // ========== MUSIC PRODUCER =============
     loginMusicProducer(user) {
-        return http.post(`${this.endpointMproducer}/sign-in`, user);
+        return http.post(`${this.endpointMproducer}/sign-in`,user);
     }
 
     registerMusicProducer(user) {

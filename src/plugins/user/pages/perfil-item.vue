@@ -102,7 +102,7 @@ export default {
       dialog: false,
       applianceReserveItem: {},
       idUser: localStorage.getItem('idUser'),
-      userType: localStorage.getItem('typUser')
+      userType: localStorage.getItem('typeUser')
 
     }
   },
@@ -149,14 +149,23 @@ export default {
     },
     updateProfile(info) {
       console.log(info)
-      MusicalProducersService.update(info.id, info)
+      if(this.userType == 'music'){
+        MusicalProducersService.update(info.id, info)
+            .then(response => {
+              console.log(response);
+              this.dialog = false;
+            })
+            .catch(e => {
+              console.log(e);
+            });
+      }else if(this.userType == 'video'){
+        VideoProducerService.update(info.id, info)
           .then(response => {
             console.log(response);
             this.dialog = false;
           })
-          .catch(e => {
-            console.log(e);
-          });
+      }
+
     },
 
 

@@ -3,7 +3,7 @@
     <Header/>
 
     <div class="data-table">
-      <h1>PROJECTS By Play List {{ this.$route.params.idPlayList}}</h1>
+      <h1>PROJECTS By Play List {{ this.projects[0].playList.description}}</h1>
       <v-row align="center" class="px-3 mx-auto">
         <v-col cols="12" sm="12">
           <v-card class="mx-auto" tile>

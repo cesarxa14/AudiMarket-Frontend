@@ -32,6 +32,7 @@
 <script>
 // import ContractService from "../services/contract.service";
 import MusicalProducerService from "../../musical-producer/services/musical-producer.service";
+import VideoProducerService from '../../video-producer/services/video-producer.service';
 export default {
   name: "contract-list",
   data: () =>({
@@ -46,19 +47,30 @@ export default {
     dialog:false,
     dialogDelete:false,
     editedIndex:-1,
+    idUser: localStorage.getItem('idUser'),
+    typeUser: localStorage.getItem('typeUser')
 
   }),
   methods: {
-    getContractsByMProducer(){
-      MusicalProducerService.getContractsById(1)
-      .then((response)=>{
-        console.log(response)
-        this.contracts = response.data
-      })
+    getContracts(){
+      if(this.typeUser == 'music'){
+        MusicalProducerService.getContractsById(this.idUser)
+            .then((response)=>{
+              console.log(response)
+              this.contracts = response.data
+            })
+      }else if(this.typeUser == 'video'){
+        VideoProducerService.getContractsById(this.idUser)
+            .then((response)=>{
+              console.log(response)
+              this.contracts = response.data
+            })
+      }
+
     }
   },
   mounted() {
-    this.getContractsByMProducer()
+    this.getContracts()
 
   }
 }

@@ -26,6 +26,9 @@ class VideoProducerService {
     getContractsById(id) {
         return http.get(`${this.endpoint}/${id}/contracts`);
     }
+    update(id, data) {
+        return http.put(`${this.endpoint}/${ id }`, data);
+    }
 
 
     delete(id) {

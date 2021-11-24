@@ -113,7 +113,9 @@ export default {
     },
     reseñalist: [],
     dialogContract: false,
-    dialogNewReseña: false
+    dialogNewReseña: false,
+    idUser: localStorage.getItem('idUser'),
+    typeUser: localStorage.getItem('typeUser')
 
   }),
   methods: {
@@ -138,9 +140,10 @@ export default {
       this.dialogNewReseña = false;
     },
     contractProducer() {
+
       this.infoContract.musicProducerId = parseInt(this.$route.params.id);
-      this.infoContract.videoProducerId  = 1;//por mientras
-      console.log(this.infoContract)
+      this.infoContract.videoProducerId  = this.idUser;
+      console.log('aquiii',this.infoContract)
     ContractService.createContract(this.infoContract)
       .then((response) => {
         console.log(response.data)
@@ -156,7 +159,7 @@ export default {
     },
     addReseña(){
       this.newReseña.musicProducerId = this.infoProducer.id
-      this.newReseña.videoProducerId = 1//por mientras
+      this.newReseña.videoProducerId = this.idUser//por mientras
       this.newReseña.qualification = 4
       console.log(this.newReseña)
       ReseñaService.createReseña(this.newReseña)
